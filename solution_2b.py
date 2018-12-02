@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import collections
+import sys
 
 if __name__ == '__main__':
     line_set = list()
@@ -26,15 +27,9 @@ if __name__ == '__main__':
                     elif count == 1:
                         count = 2
                         break
-            if count == 1 or count == 0:
-                print(''.join(first_id))
-                print(''.join(second_id))
+            if count == 1:
                 result = first_id[:difference_index]
                 if difference_index is not len(first_id):
                     result = result + first_id[difference_index + 1:]
                     print(''.join(result))
-                exit = 1
-                break
-        if exit:
-            break
-                # print(''.join(first_id[0:difference_index-1] + first_id[difference_index + 1:]))
+                    sys.exit()
